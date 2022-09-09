@@ -361,7 +361,7 @@ a {
   .win__window {
     width: 90%;
     height: 550px;
-    top: 70px;
+    top: 20px;
   }
   .win__title {
     font-size: 20px;
@@ -372,8 +372,8 @@ a {
     padding-top: 10px;
   }
   .win__img {
-    width: 80%;
-    height: 70%;
+    width: 70%;
+    height: 60%;
     margin: 0 auto;
     padding-top: 20px;
     -webkit-box-shadow: 0px 0px 50px 8px #b43b3c;
@@ -400,7 +400,7 @@ a {
   .rules {
     width: 85%;
     height: 570px;
-    top: 70px;
+    top: 20px;
   }
 
   .rules__title {
@@ -464,7 +464,7 @@ a {
   .win__window {
     width: 90%;
     height: 550px;
-    top: 70px;
+    top: 20px;
   }
   .win__title {
     font-size: 20px;
@@ -502,7 +502,7 @@ a {
   .rules {
     width: 85%;
     height: 570px;
-    top: 70px;
+    top: 20px;
   }
 
   .rules__title {
@@ -566,7 +566,7 @@ a {
   .win__window {
     width: 90%;
     height: 550px;
-    top: 70px;
+    top: 20px;
   }
   .win__title {
     font-size: 20px;
