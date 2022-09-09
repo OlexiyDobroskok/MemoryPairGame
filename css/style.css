@@ -294,9 +294,9 @@ a {
 
 @media (max-width: 375px) {
   .rules {
-    width: 85%;
-    height: 570px;
-    top: 70px;
+    width: 90%;
+    height: 550px;
+    top: 20px;
   }
 
   .rules__title {
@@ -305,6 +305,7 @@ a {
   }
   .rules__text {
     font-size: 14px;
+    margin: 0;
   }
   .rules__btn {
     margin: 20px auto;
@@ -727,7 +728,7 @@ a {
   .rules {
     width: 95%;
     height: 300px;
-    top: 40px;
+    top: 30px;
   }
 
   .rules__title {
@@ -744,7 +745,7 @@ a {
   }
 
   .character {
-    width: 100px;
+    width: 80px;
     padding-top: 10px;
   }
 
@@ -753,11 +754,11 @@ a {
   }
 
   .character__text {
-    font-size: 10px;
+    font-size: 8px;
   }
   .character__img {
-    width: 80px;
-    height: 120px;
+    width: 50px;
+    height: 80px;
   }
 
   .win__window {
