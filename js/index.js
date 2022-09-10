@@ -115,12 +115,10 @@ function searchPair({ target }) {
     sumFlippedCards++;
     if (selectedCards.length < 2) {
       selectedCards.push(chosenCard.firstChild.src);
-      if (selectedCards.length === 2 && selectedCards[0] === selectedCards[1]) {
+      const [firstCard, secondCard] = selectedCards;
+      if (selectedCards.length === 2 && firstCard === secondCard) {
         getPairCards();
-      } else if (
-        selectedCards.length === 2 &&
-        selectedCards[0] !== selectedCards[1]
-      ) {
+      } else if (selectedCards.length === 2 && firstCard !== secondCard) {
         resetPairCards();
         chosenCard = "";
       }
@@ -202,9 +200,8 @@ function whoAreYou() {
   }
 }
 
-function showWhoAreYou(getName) {
-  const nameCharacter = getName;
-  const [{ openCard }] = deckMoneyHeist.filter(
+function showWhoAreYou(nameCharacter) {
+  const [{ openCard: characterFace }] = deckMoneyHeist.filter(
     (character) => character.name === nameCharacter
   );
 
@@ -219,7 +216,7 @@ function showWhoAreYou(getName) {
   const winText = document.querySelector(".win__text");
   winText.innerHTML = `You&rsquo;re &laquo;${nameCharacter}&raquo;`;
   const winImg = document.querySelector(".win__img");
-  winImg.src = openCard;
+  winImg.src = characterFace;
 }
 
 function closeRules() {
