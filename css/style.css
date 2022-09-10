@@ -100,8 +100,6 @@ body {
   top: 0;
   bottom: 0;
   background-color: rgba(170, 204, 219, 0.281);
-  opacity: 1;
-  visibility: visible;
   z-index: 5;
   transition: all 0.5s ease 0s;
 }
@@ -114,8 +112,6 @@ body {
   bottom: 0px;
   top: 70px;
   left: 0px;
-  opacity: 1;
-  visibility: visible;
   z-index: 10;
   background-color: rgb(0, 0, 0);
   margin: 0 auto;
@@ -124,6 +120,11 @@ body {
   -moz-box-shadow: 0px 0px 47px 7px #b43c3c;
   box-shadow: 0px 0px 47px 7px #b43c3c;
   transition: all 0.5s ease 0s;
+}
+
+.hide__popup {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .rules__title {
@@ -207,8 +208,6 @@ body {
   top: 0;
   bottom: 0;
   background-color: rgba(170, 204, 219, 0.281);
-  opacity: 0;
-  visibility: hidden;
   z-index: 5;
   transition: all 1s ease 0s;
 }
@@ -221,8 +220,6 @@ body {
   bottom: 0px;
   top: 70px;
   left: 0px;
-  opacity: 0;
-  visibility: hidden;
   z-index: 10;
   background-color: black;
   margin: 0 auto;
@@ -307,7 +304,7 @@ a {
   .rules {
     width: 320px;
     height: 470px;
-    top: 20px;
+    top: 5px;
   }
 
   .rules__title {
