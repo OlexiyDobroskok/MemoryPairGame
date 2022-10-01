@@ -94,6 +94,9 @@ body {
 .opened__card {
   transform: rotateY(180deg);
 }
+.disable__click {
+  pointer-events: none;
+}
 
 dialog {
   display: block;
