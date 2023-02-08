@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Compacta";
+  font-display: fallback;
+  font-style: normal;
+  src: url("../assets/fonts/compacta.ttf") format("truetype");
+}
