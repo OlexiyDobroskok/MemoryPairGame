@@ -1,0 +1,24 @@
+.card {
+  position: relative;
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.card__flipped {
+  transform: rotateY(180deg);
+}
+
+.card__open,
+.card__closed {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+.card__open {
+  transform: rotateY(180deg);
+}
+.card__img {
+  width: 200px;
+  height: 250px;
+  user-select: none;
+}
