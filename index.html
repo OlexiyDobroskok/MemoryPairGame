@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Money Heist | Memory Game</title>
     <link rel="stylesheet" href="styles/index.css" />
-    <script defer src="./js/index.js"></script>
+    <script defer src="./js/index.js" type="module"></script>
   </head>
   <body class="page__body">
     <div class="page__container">
@@ -25,26 +25,7 @@
         <h1 class="visually-hidden">
           Memory game based on the TV series "Money Heist"
         </h1>
-        <ul class="canvas game__canvas">
-          <li class="card canvas__card">
-            <div class="card__open">
-              <img
-                class="card__img"
-                src="./assets/images/alisia.jpg"
-                alt=""
-                draggable="false"
-              />
-            </div>
-            <div class="card__closed">
-              <img
-                class="card__img"
-                src="./assets/images/dali.jpg"
-                alt=""
-                draggable="false"
-              />
-            </div>
-          </li>
-        </ul>
+        <ul class="canvas game__canvas"></ul>
       </main>
     </div>
   </body>
