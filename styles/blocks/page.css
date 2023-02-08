@@ -1,3 +1,18 @@
 .page {
   font-family: "Compacta", sans-serif;
 }
+
+.page__body {
+  margin: 0;
+  background-color: var(--secondary-color);
+}
+
+.page__container {
+  max-width: 1820px;
+  padding: 0 clamp(10px, 2.61vw, 50px);
+  margin: 0 auto;
+}
+
+.page__header {
+  display: flex;
+}
