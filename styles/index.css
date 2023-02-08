@@ -4,3 +4,7 @@
 
 @import "./blocks/logo.css";
 @import "./blocks/visually-hidden.css";
+
+@import "./blocks/game.css";
+@import "./blocks/canvas.css";
+@import "./blocks/card.css";
