@@ -1,19 +1,7 @@
-import { personsMoneyHeist } from "./constants.js";
-
-const shuffle = (deck) => deck.sort(() => Math.random() - 0.5);
-
-const makeGameDeck = (deck) => {
-  if (deck.length >= 6) {
-    const initialDeck = shuffle(deck).slice(0, 6);
-    const doubleDeck = [...initialDeck, ...initialDeck];
-    return shuffle(doubleDeck);
-  }
-};
-
 const renderCards = (deck) => {
   return deck.map(
-    ({ image }) => `
-          <li class="card canvas__card">
+    ({ id, image }) => `
+          <li class="card canvas__card" data-card-number=${id}>
             <div class="card__open">
               <img
                 class="card__img"
@@ -35,8 +23,7 @@ const renderCards = (deck) => {
   );
 };
 
-export const render = () => {
-  const gameDeck = makeGameDeck(personsMoneyHeist);
+export const render = (deck) => {
   const canvas = document.querySelector(".canvas");
-  canvas.innerHTML = renderCards(gameDeck).join("");
+  canvas.innerHTML = renderCards(deck).join("");
 };
