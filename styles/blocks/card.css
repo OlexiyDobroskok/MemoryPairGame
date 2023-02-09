@@ -1,7 +1,17 @@
 .card {
   position: relative;
+  width: 200px;
+  height: 250px;
+  list-style-type: none;
   transition: transform 0.2s ease;
   transform-style: preserve-3d;
+}
+
+.card__pair {
+}
+
+.card__disabled {
+  pointer-events: none;
 }
 
 .card__flipped {
@@ -11,6 +21,8 @@
 .card__open,
 .card__closed {
   position: absolute;
+  width: 100%;
+  height: 100%;
   inset: 0;
   backface-visibility: hidden;
 }
@@ -18,7 +30,7 @@
   transform: rotateY(180deg);
 }
 .card__img {
-  width: 200px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   user-select: none;
 }
