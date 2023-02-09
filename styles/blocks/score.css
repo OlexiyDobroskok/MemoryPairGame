@@ -10,7 +10,11 @@
   height: 30px;
   border-radius: 10px;
   background-color: white;
+  background-image: linear-gradient(to right, #e66465, #9198e5);
+  background-repeat: no-repeat;
+  transition: background-size 1s ease;
 }
+
 .score__lvl {
   position: absolute;
   top: 50%;
@@ -20,8 +24,18 @@
   text-transform: uppercase;
   font-weight: bold;
 }
-.score__img {
+
+.score__img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 75px;
   height: 75px;
-  border-radius: 20%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.score__img {
+  width: 55px;
+  height: 75px;
 }
