@@ -1,4 +1,6 @@
 .canvas {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
   perspective: 1000px;
 }
 .canvas__card {
