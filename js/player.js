@@ -38,9 +38,9 @@ export const getPlayerLvl = (score) => {
     };
 };
 
-export const renderPlayerPanel = (score) => {
-  const { lvl, lvlPercent, img } = getPlayerLvl(score);
-  const { isLvlUp } = getScore();
+export const renderPlayerPanel = () => {
+  const { sumScore, isLvlUp } = getScore();
+  const { lvl, lvlPercent, img } = getPlayerLvl(sumScore);
   document.querySelector(".player__lvl").innerText = `level ${lvl}`;
   document.querySelector(".player__img").src = img;
   const playerBar = document.querySelector(".player__bar");
