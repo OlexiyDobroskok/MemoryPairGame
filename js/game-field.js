@@ -1,4 +1,4 @@
-const renderCards = (deck) => {
+const getCardsMarkup = (deck) => {
   return deck.map(
     ({ id, image }) => `
           <li class="card canvas__card" data-card-number=${id}>
@@ -24,6 +24,5 @@ const renderCards = (deck) => {
 };
 
 export const renderGameField = (deck) => {
-  const canvas = document.querySelector(".canvas");
-  canvas.innerHTML = renderCards(deck).join("");
+  document.querySelector(".canvas").innerHTML = getCardsMarkup(deck).join("");
 };
