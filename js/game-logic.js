@@ -1,13 +1,11 @@
-const updateScore = (attempts, time) => {
+import { updateScore } from "./score.js";
+
+const countPlayerScore = (attempts, time) => {
   const maxScore = 1000;
   const minScore = 15;
-  const playerScore =
-    maxScore - attempts * time > minScore
-      ? Math.trunc(maxScore - attempts * time)
-      : minScore;
-  const prevScore = Number(localStorage.getItem("score"));
-  const actualScore = prevScore + playerScore;
-  localStorage.setItem("score", actualScore.toString());
+  return maxScore - attempts * time > minScore
+    ? Math.trunc(maxScore - attempts * time)
+    : minScore;
 };
 
 export const gameLogic = (deck) => {
@@ -36,7 +34,8 @@ export const gameLogic = (deck) => {
         if (foundedPairs === maxPairs) {
           const finishTime = Date.now();
           const gameTime = (finishTime - startTime) / 1000;
-          updateScore(attempts, gameTime);
+          const score = countPlayerScore(attempts, gameTime);
+          updateScore(score);
           setTimeout(() => {
             resolve(true);
           }, 3000);

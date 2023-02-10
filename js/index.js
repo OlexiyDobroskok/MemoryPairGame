@@ -6,12 +6,12 @@ import { getScore } from "./score.js";
 import { renderPlayerPanel } from "./player.js";
 
 export const initial = async (deck) => {
-  const { sum: score } = getScore();
+  const { sumScore } = getScore();
   const gameDeck = makeGameDeck(deck);
-  renderPlayerPanel(score);
+  renderPlayerPanel(sumScore);
   renderGameField(gameDeck);
   const isFinish = await gameLogic(gameDeck);
-  isFinish && initial();
+  isFinish && initial(deck);
 };
 
 initial(personsMoneyHeist);
