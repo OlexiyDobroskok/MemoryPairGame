@@ -1,33 +1,3 @@
-const renderCards = (deck) => {
-  return deck.map(
-    ({ id, image }) => `
-          <li class="card canvas__card" data-card-number=${id}>
-            <div class="card__open">
-              <img
-                class="card__img"
-                src=${image}
-                alt=""
-                draggable="false"
-              />
-            </div>
-            <div class="card__closed">
-              <img
-                class="card__img"
-                src="./assets/images/dali.jpg"
-                alt=""
-                draggable="false"
-              />
-            </div>
-          </li>
-  `
-  );
-};
-
-export const render = (deck) => {
-  const canvas = document.querySelector(".canvas");
-  canvas.innerHTML = renderCards(deck).join("");
-};
-
 const getPlayerLvl = (score) => {
   const lvl1 = 1000;
   const lvl2 = 2000;
@@ -66,7 +36,7 @@ const getPlayerLvl = (score) => {
     };
 };
 
-export const renderScore = (score) => {
+export const renderPlayerPanel = (score) => {
   const { lvl, lvlPercent, img } = getPlayerLvl(score);
   document.querySelector(".player__lvl").innerText = `level ${lvl}`;
   document.querySelector(".player__img").src = img;
