@@ -43,7 +43,7 @@ export const updateScore = (newScore, scoreDate) => {
   );
 };
 
-const getScoresTopLayout = (scoresList) => {
+const getScoresTopMarkup = (scoresList) => {
   return scoresList.map(
     ({ score, date }) => `
     <li class="score__item">${score} ${date}</li>
@@ -54,5 +54,5 @@ const getScoresTopLayout = (scoresList) => {
 export const renderScoresTop = () => {
   const { topScoresList } = getScore();
   document.querySelector(".score__list").innerHTML =
-    getScoresTopLayout(topScoresList).join("");
+    getScoresTopMarkup(topScoresList).join("");
 };
