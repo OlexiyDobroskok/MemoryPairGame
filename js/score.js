@@ -2,10 +2,10 @@ import { getPlayerLvl } from "./player.js";
 
 export const getScore = () => {
   if (localStorage.getItem("score")) {
-    const { sumScore, topScoresList } = JSON.parse(
+    const { sumScore, isLvlUp, topScoresList } = JSON.parse(
       localStorage.getItem("score")
     );
-    return { sumScore, topScoresList };
+    return { sumScore, isLvlUp, topScoresList };
   } else {
     const initialScore = {
       sumScore: 0,
@@ -47,7 +47,6 @@ export const updateScore = (newScore, scoreDate) => {
       topScoresList: topScoresListUpdated,
     })
   );
-  debugger;
 };
 
 const getScoresTopMarkup = (scoresList) => {
