@@ -1,3 +1,5 @@
+import { getPlayerLvl } from "./player.js";
+
 export const getScore = () => {
   if (localStorage.getItem("score")) {
     const { sumScore, topScoresList } = JSON.parse(
@@ -7,6 +9,7 @@ export const getScore = () => {
   } else {
     const initialScore = {
       sumScore: 0,
+      isLvlUp: false,
       topScoresList: [
         { score: 0, date: "" },
         { score: 0, date: "" },
@@ -28,6 +31,8 @@ export const getScore = () => {
 export const updateScore = (newScore, scoreDate) => {
   const { sumScore, topScoresList } = JSON.parse(localStorage.getItem("score"));
   const sumScoreUpdated = sumScore + newScore;
+  const isLvlUp =
+    getPlayerLvl(sumScoreUpdated).lvl > getPlayerLvl(sumScore).lvl;
   const topScoresListUpdated = [
     ...topScoresList,
     { score: newScore, date: scoreDate },
@@ -38,9 +43,11 @@ export const updateScore = (newScore, scoreDate) => {
     "score",
     JSON.stringify({
       sumScore: sumScoreUpdated,
+      isLvlUp,
       topScoresList: topScoresListUpdated,
     })
   );
+  debugger;
 };
 
 const getScoresTopMarkup = (scoresList) => {

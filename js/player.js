@@ -1,4 +1,4 @@
-const getPlayerLvl = (score) => {
+export const getPlayerLvl = (score) => {
   const lvl1 = 1000;
   const lvl2 = 2000;
   const lvl3 = 4000;
