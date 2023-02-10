@@ -68,10 +68,9 @@ const getPlayerLvl = (score) => {
 
 export const renderScore = (score) => {
   const { lvl, lvlPercent, img } = getPlayerLvl(score);
-  console.log(lvlPercent);
-  document.querySelector(".score__lvl").innerText = `level ${lvl}`;
-  document.querySelector(".score__img").src = img;
+  document.querySelector(".player__lvl").innerText = `level ${lvl}`;
+  document.querySelector(".player__img").src = img;
   document.querySelector(
-    ".score__bar"
+    ".player__bar"
   ).style.backgroundSize = `${lvlPercent}% 100%`;
 };

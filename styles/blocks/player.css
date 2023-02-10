@@ -1,9 +1,9 @@
-.score {
+.player {
   display: flex;
   gap: 10px;
   margin-left: auto;
 }
-.score__bar {
+.player__bar {
   align-self: center;
   position: relative;
   width: 300px;
@@ -15,7 +15,7 @@
   transition: background-size 1s ease;
 }
 
-.score__lvl {
+.player__lvl {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,7 +25,7 @@
   font-weight: bold;
 }
 
-.score__img-wrap {
+.player__img-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@
   background-color: white;
 }
 
-.score__img {
+.player__img {
   width: 55px;
   height: 75px;
 }
