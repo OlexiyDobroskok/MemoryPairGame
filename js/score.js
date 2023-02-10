@@ -1,27 +1,58 @@
 export const getScore = () => {
   if (localStorage.getItem("score")) {
-    const { sumScore, topScoreList } = JSON.parse(
+    const { sumScore, topScoresList } = JSON.parse(
       localStorage.getItem("score")
     );
-    return { sumScore, topScoreList };
+    return { sumScore, topScoresList };
   } else {
-    const initialScore = { sumScore: 0, topScoreList: [0, 0, 0, 0, 0] };
+    const initialScore = {
+      sumScore: 0,
+      topScoresList: [
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+        { score: 0, date: "" },
+      ],
+    };
     localStorage.setItem("score", JSON.stringify(initialScore));
     return initialScore;
   }
 };
 
-export const updateScore = (newScore) => {
-  const { sumScore, topScoreList } = JSON.parse(localStorage.getItem("score"));
+export const updateScore = (newScore, scoreDate) => {
+  const { sumScore, topScoresList } = JSON.parse(localStorage.getItem("score"));
   const sumScoreUpdated = sumScore + newScore;
-  const topScoreListUpdated = [...topScoreList, newScore]
-    .sort((firstScore, secondScore) => secondScore - firstScore)
-    .splice(0, 5);
+  const topScoresListUpdated = [
+    ...topScoresList,
+    { score: newScore, date: scoreDate },
+  ]
+    .sort((firstScore, secondScore) => secondScore.score - firstScore.score)
+    .splice(0, 10);
   localStorage.setItem(
     "score",
     JSON.stringify({
       sumScore: sumScoreUpdated,
-      topScoreList: topScoreListUpdated,
+      topScoresList: topScoresListUpdated,
     })
   );
+};
+
+const getScoresTopLayout = (scoresList) => {
+  return scoresList.map(
+    ({ score, date }) => `
+    <li class="score__item">${score} ${date}</li>
+  `
+  );
+};
+
+export const renderScoresTop = () => {
+  const { topScoresList } = getScore();
+  document.querySelector(".score__list").innerHTML =
+    getScoresTopLayout(topScoresList).join("");
 };

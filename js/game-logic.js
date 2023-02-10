@@ -32,10 +32,11 @@ export const gameLogic = (deck) => {
           }
         }
         if (foundedPairs === maxPairs) {
-          const finishTime = Date.now();
-          const gameTime = (finishTime - startTime) / 1000;
+          const date = new Date();
+          const scoreDate = date.toLocaleString();
+          const gameTime = (Date.now() - startTime) / 1000;
           const score = countPlayerScore(attempts, gameTime);
-          updateScore(score);
+          updateScore(score, scoreDate);
           setTimeout(() => {
             resolve(true);
           }, 3000);
