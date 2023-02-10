@@ -1,3 +1,5 @@
+import { getScore } from "./score.js";
+
 export const getPlayerLvl = (score) => {
   const lvl1 = 1000;
   const lvl2 = 2000;
@@ -38,9 +40,22 @@ export const getPlayerLvl = (score) => {
 
 export const renderPlayerPanel = (score) => {
   const { lvl, lvlPercent, img } = getPlayerLvl(score);
+  const { isLvlUp } = getScore();
   document.querySelector(".player__lvl").innerText = `level ${lvl}`;
   document.querySelector(".player__img").src = img;
-  document.querySelector(
-    ".player__bar"
-  ).style.backgroundSize = `${lvlPercent}% 100%`;
+  const playerBar = document.querySelector(".player__bar");
+  if (isLvlUp) {
+    playerBar.style.backgroundSize = "100% 100%";
+    setTimeout(() => {
+      playerBar.style.transition = "background-size 0s ease";
+      playerBar.style.backgroundSize = "0% 100%";
+    }, 1000);
+    setTimeout(() => {
+      playerBar.style.transition = "background-size 1s ease";
+      playerBar.style.backgroundSize = `${lvlPercent}% 100%`;
+    }, 1500);
+  } else {
+    playerBar.style.transition = "background-size 1s ease";
+    playerBar.style.backgroundSize = `${lvlPercent}% 100%`;
+  }
 };
