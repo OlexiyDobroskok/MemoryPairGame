@@ -23,7 +23,7 @@ const renderCards = (deck) => {
   );
 };
 
-export const renderCardsList = (deck) => {
+export const renderGameField = (deck) => {
   const canvas = document.querySelector(".canvas");
   canvas.innerHTML = renderCards(deck).join("");
 };
