@@ -13,7 +13,7 @@ const getCardsMarkup = (deck) => {
             <div class="card__closed">
               <img
                 class="card__img"
-                src="./assets/images/dali.jpg"
+                src="./assets/images/dali.png"
                 alt=""
                 draggable="false"
               />

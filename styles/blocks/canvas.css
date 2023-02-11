@@ -1,7 +1,13 @@
 .canvas {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, max-content);
+  grid-template-rows: repeat(3, max-content);
+  padding: 20px 0;
+  gap: 20px;
+  margin: 0;
   perspective: 1000px;
 }
+
 .canvas__card {
 }
