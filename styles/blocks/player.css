@@ -37,7 +37,6 @@
   border: 2px solid var(--primary-color-dark);
   border-radius: 50%;
   background-color: var(--third-color);
-  box-shadow: inset 0 0 15px 5px var(--primary-color-dark);
 }
 
 .player__img {
