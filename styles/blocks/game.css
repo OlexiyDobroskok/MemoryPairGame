@@ -1,11 +1,10 @@
 .game {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 3fr 1fr;
   min-height: calc(100vh - (54px + 104px));
 }
 .game__canvas {
 }
 
 .game__score {
-  margin-left: auto;
 }
