@@ -6,7 +6,7 @@
   border-radius: 10px;
   cursor: pointer;
   list-style-type: none;
-  transition: transform 0.2s ease, background-color 0.4s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
   transform-style: preserve-3d;
   box-shadow: 1px 1px 2px 2px var(--primary-color-dark),
     2px 2px 2px 2px var(--third-color);
@@ -22,7 +22,29 @@
   }
 }
 
-.card__pair {
+.card__pair .card__blur {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card__blur {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.card__message {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 38px;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 5px var(--secondary-color);
 }
 
 .card__disabled {
@@ -42,8 +64,10 @@
   backface-visibility: hidden;
 }
 .card__open {
+  position: relative;
   transform: rotateY(180deg);
 }
+
 .card__img {
   width: 100%;
   height: 100%;

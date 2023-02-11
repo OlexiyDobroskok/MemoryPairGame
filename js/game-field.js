@@ -9,6 +9,9 @@ const getCardsMarkup = (deck) => {
                 alt=""
                 draggable="false"
               />
+              <div class="card__blur">
+                <p class="card__message">caught</p>  
+              </div>
             </div>
             <div class="card__closed">
               <img
