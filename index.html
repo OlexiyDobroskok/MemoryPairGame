@@ -34,14 +34,122 @@
         <h1 class="visually-hidden">
           Memory game based on the TV series "Money Heist"
         </h1>
-        <ul class="canvas game__canvas"></ul>
-        <div class="score game__score">
-          <p class="score__title">
+        <div class="game__wrap">
+          <section class="info game__info">
+            <h2 class="visually-hidden">About Game</h2>
+            <dl class="info__description">
+              <dt class="info__text info__text--strong">
+                The Memory Pair Game
+              </dt>
+              <dd class="info__text">
+                is a classic game of matching pairs of cards. The goal is to
+                turn over cards and remember their positions to make matches.
+                Each match earns points and the game ends when all pairs have
+                been matched.
+              </dd>
+            </dl>
+            <p class="info__text">
+              The game has 5 levels. To get a new level, you need to score a
+              certain number of points:
+            </p>
+            <div class="info__wrap">
+              <table class="table info__table">
+                <caption class="table__caption">
+                  Game levels
+                </caption>
+                <tr>
+                  <th class="table__header">level</th>
+                  <th class="table__header">score</th>
+                  <th class="table__header">avatar</th>
+                </tr>
+                <tr>
+                  <td class="table__data">1</td>
+                  <td class="table__data">1000</td>
+                  <td class="table__data">
+                    <img
+                      class="table__data-img"
+                      src="./assets/images/score-icon/arturo-icon.png"
+                      alt=""
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table__data">2</td>
+                  <td class="table__data">2000</td>
+                  <td class="table__data">
+                    <img
+                      class="table__data-img"
+                      src="./assets/images/score-icon/denver-icon.png"
+                      alt=""
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table__data">3</td>
+                  <td class="table__data">4000</td>
+                  <td class="table__data">
+                    <img
+                      class="table__data-img"
+                      src="./assets/images/score-icon/tokio-icon.png"
+                      alt=""
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table__data">4</td>
+                  <td class="table__data">8000</td>
+                  <td class="table__data">
+                    <img
+                      class="table__data-img"
+                      src="./assets/images/score-icon/alicia-icon.png"
+                      alt=""
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table__data">5</td>
+                  <td class="table__data">20000</td>
+                  <td class="table__data">
+                    <img
+                      class="table__data-img"
+                      src="./assets/images/score-icon/professor-icon.png"
+                      alt=""
+                    />
+                  </td>
+                </tr>
+              </table>
+              <div class="info__score-formula">
+                <p class="info__text">
+                  <em class="info__text info__text--strong">The Score</em> is
+                  calculated by the formula:
+                </p>
+                <p class="info__text">
+                  Score = maxScore - attempts * time > minScore || minScore
+                </p>
+                <p class="info__text">maxScore = 1000</p>
+                <p class="info__text">minScore = 15</p>
+                <p class="info__text">
+                  attempts - number of attempts to find all pairs.
+                </p>
+                <p class="info__text">
+                  time - time difference from the first card selection to the
+                  moment when all pairs were found.
+                </p>
+              </div>
+            </div>
+            <p class="info__text">
+              So sharpen your memory skills and get ready to have fun!
+            </p>
+          </section>
+          <ul class="canvas game__canvas"></ul>
+        </div>
+        <section class="score game__score">
+          <h2 class="score__title">
             <button class="score__info" aria-label="game information">i</button
             >Top Scores:
-          </p>
+          </h2>
           <ol class="score__list"></ol>
-        </div>
+        </section>
       </main>
     </div>
     <footer class="page__footer">
