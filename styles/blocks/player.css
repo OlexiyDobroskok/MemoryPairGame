@@ -18,6 +18,24 @@
   background-repeat: no-repeat;
 }
 
+.player__added-message {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  font-size: 1.5rem;
+  transform: translate(-120%, -50%);
+  color: var(--third-color);
+  text-shadow: 2px 2px 5px var(--primary-color);
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.player__added-message--hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .player__lvl {
   position: absolute;
   top: 50%;

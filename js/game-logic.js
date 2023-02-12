@@ -36,10 +36,14 @@ export const gameLogic = (deck) => {
           const scoreDate = date.toLocaleString();
           const gameTime = (Date.now() - startTime) / 1000;
           const score = countPlayerScore(attempts, gameTime);
+          const scoreMessage = document.querySelector(".player__added-message");
+          scoreMessage.innerText = `+ ${score}`;
+          scoreMessage.classList.remove("player__added-message--hide");
           updateScore(score, scoreDate);
           setTimeout(() => {
+            scoreMessage.classList.add("player__added-message--hide");
             resolve(true);
-          }, 3000);
+          }, 2000);
         }
       } else if (selectedCard && selectedCard !== cardNumber) {
         selectedCard = "";
