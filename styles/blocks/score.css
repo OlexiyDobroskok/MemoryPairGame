@@ -13,24 +13,9 @@
   margin: 0;
   padding: 10px 10px 0 10px;
   font-size: 32px;
+  font-weight: normal;
   color: var(--third-color);
   text-shadow: 2px 2px 3px var(--secondary-color);
-}
-
-.score__info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  font-size: 24px;
-  color: var(--third-color);
-  text-shadow: 2px 2px 3px var(--secondary-color);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: var(--primary-color-dark);
-  box-shadow: 2px 2px 10px var(--secondary-color);
 }
 
 .score__list {

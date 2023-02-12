@@ -5,9 +5,13 @@
 @import "./blocks/logo.css";
 @import "blocks/player.css";
 @import "./blocks/visually-hidden.css";
+@import "./blocks/button.css";
 
 @import "./blocks/game.css";
+@import "./blocks/info.css";
+@import "./blocks/table.css";
 @import "./blocks/canvas.css";
 @import "./blocks/card.css";
 @import "./blocks/score.css";
+
 @import "./blocks/copy.css";

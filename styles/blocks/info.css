@@ -1,0 +1,39 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.info__term {
+  font-size: 2rem;
+  color: var(--third-color);
+  text-shadow: 2px 2px 5px var(--secondary-color);
+}
+
+.info__text {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+}
+
+.info__text--center {
+  text-align: center;
+}
+
+.info__text--focus {
+  padding: 5px;
+  font-style: normal;
+  background-color: var(--third-color);
+}
+
+.info__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -3,6 +3,27 @@
   grid-template-columns: 3fr 1fr;
   min-height: calc(100vh - (54px + 104px + 10px));
 }
+
+.game__wrap {
+  position: relative;
+  padding-top: 2px;
+  overflow: hidden;
+}
+
+.game__info {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-100%);
+  border-right: 2px solid var(--third-color);
+  background-color: var(--primary-color-dark);
+  transition: transform 0.5s ease;
+  z-index: 100;
+}
+
+.game__info--open {
+  transform: translateY(0);
+}
+
 .game__canvas {
 }
 
