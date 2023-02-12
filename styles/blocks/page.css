@@ -19,7 +19,7 @@
   align-items: center;
   gap: 20px;
   padding: 10px clamp(10px, 1.57vw, 30px);
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   max-width: 1820px;
 }
 
