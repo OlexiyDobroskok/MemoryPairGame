@@ -5,7 +5,22 @@ import { personsMoneyHeist } from "./constants.js";
 import { renderScoresTop } from "./score.js";
 import { renderPlayerPanel } from "./player.js";
 
-export const initial = async (deck) => {
+const infoBtn = document.querySelector(".score__info-btn");
+infoBtn.addEventListener("click", ({ target }) => {
+  document.querySelector(".game__info").classList.toggle("game__info--open");
+  infoBtn.ariaLabel =
+    infoBtn.ariaLabel === "open game information"
+      ? "close game information"
+      : "open game information";
+});
+
+document
+  .querySelector(".info__close-btn")
+  .addEventListener("click", ({ target }) => {
+    document.querySelector(".game__info").classList.remove("game__info--open");
+  });
+
+const initial = async (deck) => {
   const gameDeck = makeGameDeck(deck);
   renderGameField(gameDeck);
   renderPlayerPanel();
