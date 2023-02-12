@@ -4,7 +4,7 @@ export const getPlayerLvl = (score) => {
   const lvl1 = 1000;
   const lvl2 = 2000;
   const lvl3 = 4000;
-  const lvl4 = 6000;
+  const lvl4 = 8000;
   const lvl5 = 20000;
   if (score < lvl1)
     return {
