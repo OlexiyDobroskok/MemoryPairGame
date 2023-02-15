@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: clamp(15px, 2.3vw, 30px);
   padding: 10px;
+  min-width: clamp(210px, 14.2vw, 272px);
   background-color: var(--primary-color-dark);
 }
 
