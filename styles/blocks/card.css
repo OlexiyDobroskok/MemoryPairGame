@@ -60,7 +60,7 @@
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-size: 38px;
+  font-size: clamp(24px, 2vw, 38px);
   color: var(--primary-color);
   text-shadow: 2px 2px 5px var(--secondary-color);
   user-select: none;
