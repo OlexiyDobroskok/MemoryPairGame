@@ -1,7 +1,4 @@
 .card {
-  position: relative;
-  width: min(11.46vw, 220px);
-  height: min(14.1vw, 270px);
   border: 2px solid var(--third-color);
   border-radius: 10px;
   cursor: pointer;
@@ -12,14 +9,28 @@
     2px 2px 2px 2px var(--third-color);
 }
 
-.card:active {
-  background-color: var(--third-color);
+@media (min-width: 768px) {
+  .card {
+    width: clamp(140px, 11.46vw, 220px);
+    height: clamp(190px, 14.1vw, 270px);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: clamp(85px, 19.5vw, 150px);
+    height: clamp(110px, 26vw, 200px);
+  }
 }
 
 @media (min-width: 500px) {
   .card:hover {
     background-color: var(--third-color);
   }
+}
+
+.card:active {
+  background-color: var(--third-color);
 }
 
 .card__pair .card__blur {
@@ -63,6 +74,7 @@
   inset: 0;
   backface-visibility: hidden;
 }
+
 .card__open {
   position: relative;
   transform: rotateY(180deg);
