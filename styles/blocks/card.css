@@ -33,7 +33,7 @@
   background-color: var(--third-color);
 }
 
-.card__pair .card__blur {
+.card--pair .card__blur {
   opacity: 1;
   visibility: visible;
 }
@@ -58,11 +58,11 @@
   text-shadow: 2px 2px 5px var(--secondary-color);
 }
 
-.card__disabled {
+.card--disabled {
   pointer-events: none;
 }
 
-.card__flipped {
+.card--flipped {
   transform: rotateY(180deg);
 }
 
