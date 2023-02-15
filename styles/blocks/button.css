@@ -2,9 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
-  font-size: 24px;
   color: var(--third-color);
   text-shadow: 2px 2px 3px var(--secondary-color);
   border: none;
@@ -12,4 +9,30 @@
   cursor: pointer;
   background-color: var(--primary-color-dark);
   box-shadow: 2px 2px 10px var(--secondary-color);
+}
+
+@media (min-width: 656px) {
+  .button {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+
+  .button__img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 655px) {
+  .button {
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+
+  .button__img {
+    width: 16px;
+    height: 16px;
+  }
 }
