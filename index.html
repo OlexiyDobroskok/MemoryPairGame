@@ -12,6 +12,7 @@
     <script defer src="./js/index.js" type="module"></script>
   </head>
   <body class="page__body">
+    <div class="backdrop page__backdrop backdrop__hidden"></div>
     <header class="page__header">
       <div class="logo">
         <img class="logo__image" src="./assets/images/logo.svg" alt="" />
@@ -26,6 +27,24 @@
         </div>
         <div class="player__img-wrap">
           <img class="player__img" src="./assets/images/arturo.jpg" alt="" />
+          <div class="player__button-group">
+            <button
+              class="button info__toggle-btn"
+              aria-label="open game information"
+            >
+              i
+            </button>
+            <button
+              class="button score__toggle-btn"
+              aria-label="open score information"
+            >
+              <img
+                class="button__img"
+                src="./assets/images/score-icon/leaderboard.svg"
+                alt=""
+              />
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -147,17 +166,24 @@
               X
             </button>
           </section>
-          <ul class="canvas game__canvas"></ul>
+          <section class="game__canvas">
+            <ul class="canvas"></ul>
+          </section>
         </div>
         <section class="score game__score">
-          <h2 class="score__title">
-            <button
-              class="button score__info-btn"
-              aria-label="open game information"
-            >
-              i</button
-            >Top Scores:
-          </h2>
+          <h2 class="score__title">Top Scores:</h2>
+          <button
+            class="button score__info-btn info__toggle-btn"
+            aria-label="open game information"
+          >
+            i
+          </button>
+          <button
+            class="button score__close-btn"
+            aria-label="close score information"
+          >
+            X
+          </button>
           <ol class="score__list"></ol>
         </section>
       </main>
