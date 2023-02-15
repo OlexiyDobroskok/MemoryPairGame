@@ -19,9 +19,9 @@ const closeGameInfo = () => {
 
 const toggleGameScore = (button) => {
   const backdrop = document.querySelector(".backdrop");
-  backdrop.classList.toggle("backdrop__hidden");
+  backdrop.classList.toggle("backdrop--hidden");
   backdrop.classList.toggle("score__backdrop");
-  document.querySelector(".score").classList.toggle("score__open");
+  document.querySelector(".score").classList.toggle("score--open");
   button.ariaLabel =
     button.ariaLabel === "open score information"
       ? "close score information"
@@ -30,8 +30,8 @@ const toggleGameScore = (button) => {
 
 const closeScore = () => {
   const backdrop = document.querySelector(".backdrop");
-  document.querySelector(".score").classList.remove("score__open");
-  backdrop.classList.add("backdrop__hidden");
+  document.querySelector(".score").classList.remove("score--open");
+  backdrop.classList.add("backdrop--hidden");
   backdrop.classList.remove("score__backdrop");
 };
 

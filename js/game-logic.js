@@ -21,14 +21,14 @@ export const gameLogic = (deck) => {
       if (!card) return;
       if (attempts === 0 && !selectedCard) startTime = Date.now();
       const cardNumber = card.dataset.cardNumber;
-      card.classList.add("card__flipped", "card__disabled");
+      card.classList.add("card--flipped", "card--disabled");
       if (selectedCard && selectedCard === cardNumber) {
         selectedCard = "";
         foundedPairs++;
         attempts++;
         for (const gameCard of canvas.children) {
-          if (gameCard.classList.contains("card__flipped")) {
-            gameCard.classList.add("card__disabled", "card__pair");
+          if (gameCard.classList.contains("card--flipped")) {
+            gameCard.classList.add("card--disabled", "card--pair");
           }
         }
         if (foundedPairs === maxPairs) {
@@ -49,12 +49,12 @@ export const gameLogic = (deck) => {
         selectedCard = "";
         attempts++;
         for (const gameCard of canvas.children) {
-          gameCard.classList.add("card__disabled");
+          gameCard.classList.add("card--disabled");
         }
         setTimeout(() => {
           for (const gameCard of canvas.children) {
-            if (!gameCard.classList.contains("card__pair")) {
-              gameCard.classList.remove("card__disabled", "card__flipped");
+            if (!gameCard.classList.contains("card--pair")) {
+              gameCard.classList.remove("card--disabled", "card--flipped");
             }
           }
         }, 1000);
