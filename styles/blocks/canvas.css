@@ -1,12 +1,27 @@
 .canvas {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, max-content);
-  grid-template-rows: repeat(3, max-content);
-  gap: 20px;
   margin: 0;
+  padding: 0;
   perspective: 1000px;
 }
 
+@media (min-width: 531px) {
+  .canvas {
+    grid-template-columns: repeat(4, max-content);
+    grid-template-rows: repeat(3, max-content);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .canvas {
+    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: repeat(4, max-content);
+    row-gap: clamp(5px, 3.8vw, 20px);
+    column-gap: clamp(10px, 5.2vw, 40px);
+  }
+}
+
 .canvas__card {
+  position: relative;
 }
