@@ -5,20 +5,58 @@ import { personsMoneyHeist } from "./constants.js";
 import { renderScoresTop } from "./score.js";
 import { renderPlayerPanel } from "./player.js";
 
-const infoBtn = document.querySelector(".score__info-btn");
-infoBtn.addEventListener("click", ({ target }) => {
+const toggleGameInfo = (button) => {
   document.querySelector(".game__info").classList.toggle("game__info--open");
-  infoBtn.ariaLabel =
-    infoBtn.ariaLabel === "open game information"
+  button.ariaLabel =
+    button.ariaLabel === "open game information"
       ? "close game information"
       : "open game information";
-});
+};
 
-document
-  .querySelector(".info__close-btn")
-  .addEventListener("click", ({ target }) => {
-    document.querySelector(".game__info").classList.remove("game__info--open");
-  });
+const closeGameInfo = () => {
+  document.querySelector(".game__info").classList.remove("game__info--open");
+};
+
+const toggleGameScore = (button) => {
+  const backdrop = document.querySelector(".backdrop");
+  backdrop.classList.toggle("backdrop__hidden");
+  backdrop.classList.toggle("score__backdrop");
+  document.querySelector(".score").classList.toggle("score__open");
+  button.ariaLabel =
+    button.ariaLabel === "open score information"
+      ? "close score information"
+      : "open score information";
+};
+
+const closeScore = () => {
+  const backdrop = document.querySelector(".backdrop");
+  document.querySelector(".score").classList.remove("score__open");
+  backdrop.classList.add("backdrop__hidden");
+  backdrop.classList.remove("score__backdrop");
+};
+
+const handleBodyClick = ({ target }) => {
+  const scoreBackdrop = target.closest(".score__backdrop");
+  const toggleScoreBtn = target.closest(".score__toggle-btn");
+  const toggleGameInfoBtn = target.closest(".info__toggle-btn");
+  const closeScoreBtn = target.closest(".score__close-btn");
+  const closeGameInfoBtn = target.closest(".info__close-btn");
+  if (
+    !scoreBackdrop &&
+    !toggleScoreBtn &&
+    !toggleGameInfoBtn &&
+    !closeScoreBtn &&
+    !closeGameInfoBtn
+  )
+    return;
+  if (toggleScoreBtn) toggleGameScore(toggleScoreBtn);
+  if (toggleGameInfoBtn) toggleGameInfo(toggleGameInfoBtn);
+  if (closeGameInfoBtn) closeGameInfo();
+  if (scoreBackdrop || closeScoreBtn) closeScore();
+};
+
+const pageBody = document.querySelector(".page__body");
+pageBody.addEventListener("click", handleBodyClick);
 
 const initial = async (deck) => {
   const gameDeck = makeGameDeck(deck);
