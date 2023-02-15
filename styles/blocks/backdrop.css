@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+  .backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+    z-index: 50;
+  }
+
+  .backdrop__hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
