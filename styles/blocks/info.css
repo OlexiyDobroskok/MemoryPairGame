@@ -5,13 +5,13 @@
 }
 
 .info__term {
-  font-size: clamp(1rem, 4.3vw, 1.8rem);
+  font-size: clamp(0.9rem, 4.3vw, 1.8rem);
   color: var(--third-color);
   text-shadow: 2px 2px 5px var(--secondary-color);
 }
 
 .info__text {
-  font-size: clamp(0.8rem, 3.2vw, 1.3rem);
+  font-size: clamp(0.7rem, 3.2vw, 1.3rem);
   color: var(--secondary-color);
 }
 
@@ -50,7 +50,7 @@
 @media (max-width: 655px) {
   .info__title {
     display: block;
-    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-size: clamp(1.1rem, 5vw, 2rem);
     font-weight: normal;
     margin: 0 0 10px;
     text-align: center;
@@ -61,5 +61,15 @@
   .info__text {
     margin: 10px 0;
     line-height: 1.5;
+  }
+}
+
+@media (max-height: 550px) {
+  .info__term-list {
+    margin: 0;
+  }
+
+  .info__text {
+    margin: 5px 0;
   }
 }

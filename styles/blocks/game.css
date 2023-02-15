@@ -38,6 +38,7 @@
 
 @media (max-width: 991px) {
   .game {
+    padding-top: 2px;
     justify-content: center;
   }
 

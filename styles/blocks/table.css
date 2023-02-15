@@ -6,7 +6,7 @@
 
 .table__data,
 .table__header {
-  font-size: clamp(0.8rem, 3.2vw, 1.3rem);
+  font-size: clamp(0.7rem, 3.2vw, 1.3rem);
 }
 
 .table__header {

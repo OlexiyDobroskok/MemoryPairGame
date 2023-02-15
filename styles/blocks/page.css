@@ -63,3 +63,9 @@
     margin: 0 auto;
   }
 }
+
+@media (max-height: 550px) {
+  .page__game {
+    min-height: calc(100vh - (34px + 84px));
+  }
+}
