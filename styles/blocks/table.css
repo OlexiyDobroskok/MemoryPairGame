@@ -4,18 +4,30 @@
   gap: 10px;
 }
 
+.table__data,
+.table__header {
+  font-size: clamp(0.8rem, 3.2vw, 1.3rem);
+}
+
 .table__header {
   width: 70px;
-  font-size: 1.3rem;
   font-weight: normal;
 }
 
 .table__data {
-  font-size: 1.3rem;
   text-align: center;
 }
 
-.table__data-img {
-  width: 35px;
-  height: 50px;
+@media (min-width: 656px) {
+  .table__data-img {
+    width: 35px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 655px) {
+  .table__data-img {
+    width: 20px;
+    height: 30px;
+  }
 }
