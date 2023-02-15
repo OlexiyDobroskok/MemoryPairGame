@@ -1,12 +1,5 @@
 .game {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  min-height: calc(100vh - (54px + 104px + 10px));
-}
-
-.game__wrap {
-  position: relative;
-  padding-top: 2px;
+  display: flex;
   overflow: hidden;
 }
 
@@ -14,18 +7,37 @@
   position: absolute;
   inset: 0;
   transform: translateY(-100%);
-  border-right: 2px solid var(--third-color);
   background-color: var(--primary-color-dark);
   transition: transform 0.5s ease;
-  z-index: 100;
+  z-index: 200;
 }
 
 .game__info--open {
   transform: translateY(0);
 }
 
-.game__canvas {
+@media (min-width: 992px) {
+  .game {
+    justify-content: space-between;
+  }
+
+  .game__wrap {
+    flex-grow: 1;
+    position: relative;
+    padding-top: 2px;
+  }
+
+  .game__score {
+    position: relative;
+  }
+
+  .game__info {
+    border-right: 2px solid var(--third-color);
+  }
 }
 
-.game__score {
+@media (max-width: 991px) {
+  .game {
+    justify-content: center;
+  }
 }
