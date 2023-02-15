@@ -9,8 +9,23 @@
 
 .page__container {
   max-width: 1820px;
-  padding: 0 clamp(10px, 2.61vw, 50px);
+  padding: 0 clamp(20px, 2.61vw, 50px);
   margin: 0 auto;
+}
+
+.page__logo {
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .page__backdrop {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.page__game {
+  position: relative;
 }
 
 .page__header {
@@ -18,8 +33,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 10px clamp(10px, 1.57vw, 30px);
-  margin: 0 auto 10px auto;
+  padding: 10px clamp(20px, 1.6vw, 30px);
   max-width: 1820px;
 }
 
@@ -28,4 +42,24 @@
   justify-content: center;
   align-items: center;
   border-top: 2px solid var(--third-color);
+}
+
+@media (min-width: 656px) {
+  .page__game {
+    min-height: calc(100vh - (54px + 104px + 10px));
+  }
+
+  .page__header {
+    margin: 0 auto 10px auto;
+  }
+}
+
+@media (max-width: 655px) {
+  .page__game {
+    min-height: calc(100vh - (54px + 84px));
+  }
+
+  .page__header {
+    margin: 0 auto;
+  }
 }
