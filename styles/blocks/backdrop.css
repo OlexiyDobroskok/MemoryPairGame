@@ -8,7 +8,7 @@
     z-index: 50;
   }
 
-  .backdrop__hidden {
+  .backdrop--hidden {
     opacity: 0;
     visibility: hidden;
   }
