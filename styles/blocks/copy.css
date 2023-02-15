@@ -1,6 +1,7 @@
 .copy {
   color: var(--third-color);
 }
+
 .copy__link {
   padding: 5px 10px;
   color: var(--third-color);
