@@ -23,7 +23,7 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 992px) {
   .card:hover {
     background-color: var(--third-color);
   }
