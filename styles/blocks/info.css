@@ -5,11 +5,13 @@
 }
 
 .info__term {
+  font-size: clamp(1rem, 4.3vw, 1.8rem);
   color: var(--third-color);
   text-shadow: 2px 2px 5px var(--secondary-color);
 }
 
 .info__text {
+  font-size: clamp(0.8rem, 3.2vw, 1.3rem);
   color: var(--secondary-color);
 }
 
@@ -43,20 +45,12 @@
   .info__title {
     display: none;
   }
-
-  .info__term {
-    font-size: 2rem;
-  }
-
-  .info__text {
-    font-size: 1.3rem;
-  }
 }
 
 @media (max-width: 655px) {
   .info__title {
     display: block;
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 5vw, 2rem);
     font-weight: normal;
     margin: 0 0 10px;
     text-align: center;
@@ -64,12 +58,7 @@
     text-shadow: 2px 2px 5px var(--secondary-color);
   }
 
-  .info__term {
-    font-size: 1rem;
-  }
-
   .info__text {
-    font-size: 0.8rem;
     margin: 10px 0;
     line-height: 1.5;
   }
