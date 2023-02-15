@@ -40,4 +40,10 @@
   .game {
     justify-content: center;
   }
+
+  .game__score {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
