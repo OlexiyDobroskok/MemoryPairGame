@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.page__dialog {
+  transform: translateY(-50%);
+}
+
 @media (max-width: 991px) {
   .page__backdrop {
     position: absolute;
