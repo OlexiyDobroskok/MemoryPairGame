@@ -8,11 +8,18 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transform: scale(1);
+  transition: transform .2s ease;
   background-color: var(--primary-color-dark);
   box-shadow: 2px 2px 10px var(--secondary-color);
 }
 
+.button:active{
+  transform: scale(.95);
+}
+
 .button--square {
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
