@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
   color: var(--third-color);
   text-shadow: 2px 2px 3px var(--secondary-color);
   border: none;
