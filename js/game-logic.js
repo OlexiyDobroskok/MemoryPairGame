@@ -64,16 +64,17 @@ const setNotPair = (game) => {
   setClassesForNotPair();
 };
 
-const setFinishGame = (resolve, game) => {
+const setFinishGame = (resolve, { startTime, attempts }) => {
   const scoreDate = getScoreDate();
-  const gameTime = getGameTimeSec(game.startTime);
-  const score = countPlayerScore(game.attempts, gameTime);
+  const gameTime = getGameTimeSec(startTime);
+  const score = countPlayerScore(attempts, gameTime);
   showScoreMessage(score);
   updateScore(score, scoreDate);
   setTimeout(() => {
     resolve(true);
   }, 2000);
 };
+
 export const gameLogic = (deck) => {
   const game = {
     maxPairs: deck.length / 2,
