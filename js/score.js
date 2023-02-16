@@ -22,13 +22,9 @@ export const setInitialScore = () => {
 };
 
 export const getScore = () => {
-  if (localStorage.getItem("score")) {
-    const { sumScore, isLvlUp, topScoresList } = JSON.parse(
-      localStorage.getItem("score")
-    );
-    return { sumScore, isLvlUp, topScoresList };
-  }
-  return setInitialScore();
+  return localStorage.getItem("score")
+    ? JSON.parse(localStorage.getItem("score"))
+    : setInitialScore();
 };
 
 export const updateScore = (newScore, scoreDate) => {
@@ -52,13 +48,12 @@ export const updateScore = (newScore, scoreDate) => {
   );
 };
 
-const getScoresTopMarkup = (scoresList) => {
-  return scoresList.map(
+const getScoresTopMarkup = (scoresList) =>
+  scoresList.map(
     ({ score, date }) => `
     <li class="score__item">${score} ${date}</li>
   `
   );
-};
 
 export const renderScoresTop = () => {
   const { topScoresList } = getScore();
