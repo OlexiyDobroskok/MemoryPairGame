@@ -188,7 +188,24 @@
             X
           </button>
           <ol class="score__list"></ol>
+          <button class="button button--square score__clear-btn">Clear</button>
         </section>
+        <dialog class="dialog page__dialog">
+          <p class="dialog__title">Warning!</p>
+          <p class="dialog__message">
+            Are you sure? All your scores will be deleted!
+          </p>
+          <div class="dialog__btn-group">
+            <button
+              class="button button--square button--transparent dialog__cancel-btn"
+            >
+              Cancel
+            </button>
+            <button class="button button--square dialog__clear-btn">
+              Clear
+            </button>
+          </div>
+        </dialog>
       </main>
     </div>
     <footer class="page__footer">
@@ -198,7 +215,7 @@
           class="copy__link"
           href="https://github.com/OlexiyDobroskok/MemoryPairGame/tree/v2.0"
           target="_blank"
-          >OlexiiDobroskok</a
+          >Olexii Dobroskok</a
         >
         Artist:
         <a
