@@ -1,31 +1,34 @@
 import { getPlayerLvl } from "./player.js";
 
+export const setInitialScore = () => {
+  const initialScore = {
+    sumScore: 0,
+    isLvlUp: false,
+    topScoresList: [
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+      { score: 0, date: "" },
+    ],
+  };
+  localStorage.setItem("score", JSON.stringify(initialScore));
+  return initialScore;
+};
+
 export const getScore = () => {
   if (localStorage.getItem("score")) {
     const { sumScore, isLvlUp, topScoresList } = JSON.parse(
       localStorage.getItem("score")
     );
     return { sumScore, isLvlUp, topScoresList };
-  } else {
-    const initialScore = {
-      sumScore: 0,
-      isLvlUp: false,
-      topScoresList: [
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-        { score: 0, date: "" },
-      ],
-    };
-    localStorage.setItem("score", JSON.stringify(initialScore));
-    return initialScore;
   }
+  return setInitialScore();
 };
 
 export const updateScore = (newScore, scoreDate) => {
