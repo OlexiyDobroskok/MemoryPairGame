@@ -86,6 +86,7 @@
 .card__open {
   position: relative;
   transform: rotateY(180deg);
+  z-index: 10;
 }
 
 .card__img {
