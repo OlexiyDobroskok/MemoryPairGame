@@ -8,58 +8,117 @@ const countPlayerScore = (attempts, time) => {
     : minScore;
 };
 
+const setClassesForOpenCard = (card) => {
+  card.classList.add("card--flipped", "card--disabled");
+};
+
+const setClassesForPair = () => {
+  const canvas = document.querySelector(".canvas");
+  for (const gameCard of canvas.children) {
+    if (gameCard.classList.contains("card--flipped")) {
+      gameCard.classList.add("card--disabled", "card--pair");
+    }
+  }
+};
+
+const setClassesForNotPair = () => {
+  const canvas = document.querySelector(".canvas");
+  for (const gameCard of canvas.children) {
+    gameCard.classList.add("card--disabled");
+  }
+  setTimeout(() => {
+    for (const gameCard of canvas.children) {
+      if (!gameCard.classList.contains("card--pair")) {
+        gameCard.classList.remove("card--disabled", "card--flipped");
+      }
+    }
+  }, 1000);
+};
+
+const getScoreDate = () => {
+  const date = new Date();
+  return date.toLocaleString();
+};
+
+const getGameTimeSec = (startTime) => (Date.now() - startTime) / 1000;
+
+const showScoreMessage = (score) => {
+  const scoreMessage = document.querySelector(".player__added-message");
+  scoreMessage.innerText = `+ ${score}`;
+  scoreMessage.classList.remove("player__added-message--hide");
+  setTimeout(() => {
+    scoreMessage.classList.add("player__added-message--hide");
+  }, 2000);
+};
+
+const setPair = (game) => {
+  game.clearSelectedCard();
+  game.addPair();
+  game.addAttempt();
+  setClassesForPair();
+};
+
+const setNotPair = (game) => {
+  game.clearSelectedCard();
+  game.addAttempt();
+  setClassesForNotPair();
+};
+
+const setFinishGame = (resolve, game) => {
+  const scoreDate = getScoreDate();
+  const gameTime = getGameTimeSec(game.startTime);
+  const score = countPlayerScore(game.attempts, gameTime);
+  showScoreMessage(score);
+  updateScore(score, scoreDate);
+  setTimeout(() => {
+    resolve(true);
+  }, 2000);
+};
 export const gameLogic = (deck) => {
+  const game = {
+    maxPairs: deck.length / 2,
+    foundedPairs: 0,
+    selectedCard: "",
+    attempts: 0,
+    startTime: 0,
+
+    addPair() {
+      this.foundedPairs++;
+    },
+
+    addAttempt() {
+      this.attempts++;
+    },
+
+    setStartTime() {
+      this.startTime = Date.now();
+    },
+
+    setSelectedCard(card) {
+      this.selectedCard = card;
+    },
+
+    clearSelectedCard() {
+      this.selectedCard = "";
+    },
+  };
   return new Promise((resolve) => {
-    const maxPairs = deck.length / 2;
-    let foundedPairs = 0;
-    let selectedCard = "";
-    let attempts = 0;
-    let startTime = 0;
     const canvas = document.querySelector(".canvas");
     canvas.addEventListener("click", ({ target }) => {
       const card = target.closest(".card");
       if (!card) return;
-      if (attempts === 0 && !selectedCard) startTime = Date.now();
       const cardNumber = card.dataset.cardNumber;
-      card.classList.add("card--flipped", "card--disabled");
-      if (selectedCard && selectedCard === cardNumber) {
-        selectedCard = "";
-        foundedPairs++;
-        attempts++;
-        for (const gameCard of canvas.children) {
-          if (gameCard.classList.contains("card--flipped")) {
-            gameCard.classList.add("card--disabled", "card--pair");
-          }
+      if (game.attempts === 0 && !game.selectedCard) game.setStartTime();
+      setClassesForOpenCard(card);
+      if (game.selectedCard && game.selectedCard === cardNumber) {
+        setPair(game);
+        if (game.foundedPairs === game.maxPairs) {
+          setFinishGame(resolve, game);
         }
-        if (foundedPairs === maxPairs) {
-          const date = new Date();
-          const scoreDate = date.toLocaleString();
-          const gameTime = (Date.now() - startTime) / 1000;
-          const score = countPlayerScore(attempts, gameTime);
-          const scoreMessage = document.querySelector(".player__added-message");
-          scoreMessage.innerText = `+ ${score}`;
-          scoreMessage.classList.remove("player__added-message--hide");
-          updateScore(score, scoreDate);
-          setTimeout(() => {
-            scoreMessage.classList.add("player__added-message--hide");
-            resolve(true);
-          }, 2000);
-        }
-      } else if (selectedCard && selectedCard !== cardNumber) {
-        selectedCard = "";
-        attempts++;
-        for (const gameCard of canvas.children) {
-          gameCard.classList.add("card--disabled");
-        }
-        setTimeout(() => {
-          for (const gameCard of canvas.children) {
-            if (!gameCard.classList.contains("card--pair")) {
-              gameCard.classList.remove("card--disabled", "card--flipped");
-            }
-          }
-        }, 1000);
+      } else if (game.selectedCard && game.selectedCard !== cardNumber) {
+        setNotPair(game);
       } else {
-        selectedCard = cardNumber;
+        game.setSelectedCard(cardNumber);
       }
     });
   });
