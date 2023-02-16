@@ -14,5 +14,6 @@
 @import "./blocks/canvas.css";
 @import "./blocks/card.css";
 @import "./blocks/score.css";
+@import "./blocks/dialog.css";
 
 @import "./blocks/copy.css";
