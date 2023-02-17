@@ -28,6 +28,10 @@
   background-color: transparent;
 }
 
+.button__ico-text {
+  font-family: sans-serif;
+}
+
 @media (min-width: 656px) {
   .button {
     min-width: 35px;
