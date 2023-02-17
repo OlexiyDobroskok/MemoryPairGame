@@ -68,7 +68,7 @@
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 600px) {
   .page__game {
     min-height: calc(100vh - (34px + 84px));
   }

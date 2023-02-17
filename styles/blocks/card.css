@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 600px) {
   .card {
     width: clamp(70px, 16.5vw, 125px);
     height: clamp(90px, 21.9vw, 165px);

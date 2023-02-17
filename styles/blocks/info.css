@@ -64,7 +64,7 @@
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 600px) {
   .info__term-list {
     margin: 0;
   }
