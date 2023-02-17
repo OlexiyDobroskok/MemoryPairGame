@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  font-family: 'Compacta',sans-serif;
   color: var(--third-color);
-  text-shadow: 2px 2px 3px var(--secondary-color);
   border: none;
   border-radius: 50%;
   cursor: pointer;
